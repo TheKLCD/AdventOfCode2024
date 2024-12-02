@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
+import methods.Methods;
 
 public class Day1{
     public static void main(String[] args) throws IOException{
@@ -20,8 +21,8 @@ public class Day1{
         }
 
         // Sort so we can compare in order from least to most
-        list1 = sort(list1);
-        list2 = sort(list2);
+        list1 = Methods.sort(list1);
+        list2 = Methods.sort(list2);
 
         // Go through the list comparing the matching data from list 1 and 2 to find the difference in each line
         int total = 0;
@@ -57,28 +58,5 @@ public class Day1{
         System.out.println("Total for Part 2: "+total);
 
         reader.close();
-    }
-
-    // Sort list from low to high
-    public static int[] sort(int[] list){
-        // Bubble sort
-        boolean sorted = false;
-
-        while(!sorted){
-            sorted = true;
-
-            for(int i = 0; i < list.length; i++){
-                for(int j = i+1; j < list.length; j++){
-                    if(list[i] > list[j]){
-                        sorted = false;
-                        int temp = list[i];
-                        list[i] = list[j];
-                        list[j] = temp;
-                    }
-                }
-            }
-        }
-
-        return list;
     }
 }
