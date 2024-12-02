@@ -43,6 +43,8 @@ public class Day1{
         }
 
         System.out.println(total);
+
+        reader.close();
     }
 
     public static int[] sort(int[] list){
