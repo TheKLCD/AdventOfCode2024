@@ -21,8 +21,8 @@ public class Day1{
         }
 
         // Sort so we can compare in order from least to most
-        list1 = Methods.sort(list1);
-        list2 = Methods.sort(list2);
+        list1 = Methods.sortLowToHigh(list1);
+        list2 = Methods.sortLowToHigh(list2);
 
         // Go through the list comparing the matching data from list 1 and 2 to find the difference in each line
         int total = 0;
