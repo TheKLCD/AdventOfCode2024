@@ -1,3 +1,9 @@
+/*
+ * Solution for Advent Of Code 2024 Day 3 https://adventofcode.com/2024/day/3
+ * Solution by KLCD (Matthew Yeager)
+ * Last Updated: 12/4/2024
+ */
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
