@@ -4,11 +4,13 @@ import java.io.IOException;
 
 public class Day4 {
     public static void main(String[] args) throws IOException {
+        // Initiation
         File input = new File("2024/Day4/input.txt");
         Scanner reader = new Scanner(input);
 
         char[][] map = new char[140][140];
-        
+
+        // Get the input from the file and map each character to a 2d array
         for(int i = 0; i < map.length; i++){
             String line = reader.nextLine();
 
@@ -17,34 +19,43 @@ public class Day4 {
             }
         }
 
+        // Loop through each character and check if it starts with x for xmas
         int total = 0;
 
         for(int i = 0; i < map.length; i++){
             for(int j = 0; j < map[i].length; j++){
+                // If the char is x, check to see if it is surrounded by mas in any direction
                 if(map[i][j] == 'X'){
                     total += checkMap(i, j, map);
                 }
             }
         }
 
-        System.out.println(total);
+        // Print out the total amount of times it says xmas
+        System.out.println("Total for Part 1: "+total);
+        total = 0;
 
-        int total2 = 0;
-
+        // Check each for each character is A for the center of X-MAS
         for(int i = 0; i < map.length; i++){
             for(int j = 0; j < map[i].length; j++){
+                // If A, check for the double mas
                 if(map[i][j] == 'A'){
-                    total2 += checkXMAS(i, j, map);
+                    total += checkXMAS(i, j, map);
                 }
             }
         }
 
-        System.out.println(total2);
+        // Print total for part 2
+        System.out.println("Total for Part 2: "+total);
+
+        reader.close();
     }
 
+    // Checks if mas is many in any direction from a point
     public static int checkMap(int x, int y, char[][] map){
         int total = 0;
 
+        // Check if you can go in each direction, and if so see if it spells out MAS
         //Up left
         if(x >= 3 && y >= 3){
             if(map[x-1][y-1] == 'M' && map[x-2][y-2] == 'A' && map[x-3][y-3] == 'S'){
@@ -94,11 +105,15 @@ public class Day4 {
             }
         }
 
+        // Return the total times it makes XMAS for that point
         return total;
     }
 
+    // Check if the current center point can make the X-MAS structure
     public static int checkXMAS(int x, int y, char[][] map){
         int total = 0;
+
+        // Track if each diagonal is a M or S
         boolean mUpLeft = false;
         boolean sUpLeft = false;
         boolean mUpRight = false;
@@ -145,6 +160,7 @@ public class Day4 {
             }
         }
 
+        // See if MAS was made, if it was increase the total of MAS
         if(mUpLeft && sDownRight){
             total++;
         }
@@ -158,6 +174,7 @@ public class Day4 {
             total++;
         }
 
+        // If 2 MAS were made, return 1, if else return 0
         return total/2;
     }
 }
