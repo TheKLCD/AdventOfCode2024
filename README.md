@@ -10,3 +10,4 @@ Java Solutions to Advent of Code 2024, All Solutions by [Me](https://github.com/
 - [Day 2](https://github.com/TheKLCD/AdventOfCode2024/tree/main/2024/Day2)
 - [Day 3](https://github.com/TheKLCD/AdventOfCode2024/tree/main/2024/Day3)
 - [Day 4](https://github.com/TheKLCD/AdventOfCode2024/tree/main/2024/Day4)
+- [Day 5](https://github.com/TheKLCD/AdventOfCode2024/tree/main/2024/Day5)
